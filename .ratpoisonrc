@@ -1,0 +1,10 @@
+#bind x exec urxvt +sb -fn "xft:terminus:size=12" -rv
+bind x exec urxvt +sb -fn "xft:Inconsolata for Powerline:pixelsize=14" -rv
+bind g exec google-chrome
+
+exec /usr/bin/rpws init 4 -k
+
+exec xsetroot -cursor_name left_ptr
+startup_message off
+
+#escape C-z
