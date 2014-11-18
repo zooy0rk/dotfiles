@@ -9,7 +9,7 @@ git submodule update
 
 for dotfile in $(ls -A | grep '^\.')
 do
-	[[ -f ~/${dotfile} ]] && mv ~/${dotfile} ~/${dotfile}.orig
+	[[ -f ~/${dotfile} || -e ~/${dotfile} ]] && mv ~/${dotfile} ~/${dotfile}.orig
 
 	ln -s $(pwd)/${dotfile} ~/${dotfile}
 done
