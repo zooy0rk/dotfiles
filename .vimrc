@@ -4,6 +4,7 @@ syntax on
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class shiftwidth=4 tabstop=4 autoindent 
 autocmd BufNewFile,BufRead *.json set ft=javascript smartindent cinwords={ shiftwidth=4 tabstop=4 autoindent
 set background=dark
+set smartindent autoindent
 
 :set incsearch
 :set ignorecase
@@ -13,6 +14,8 @@ set background=dark
 
 :nmap \l :setlocal number!<CR>
 :nmap \o :set paste!<CR>
+:nmap \d :cprev<CR>
+:nmap \f :cnext<CR>
 
 :nmap j gj
 :nmap k gk
@@ -22,6 +25,7 @@ set background=dark
 :nmap <C-n> :bnext<CR>
 :nmap <C-p> :bprev<CR>
 
+ 
 :nmap ; :CtrlPBuffer<CR>
 :let g:ctrlp_map = '<Leader>t'
 :let g:ctrlp_match_window_bottom = 0
@@ -48,3 +52,26 @@ set noshowmode
 nmap <F8> :TagbarToggle<CR>
 
 colors zenburn
+
+
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gs :Gstatus<CR>
+nnoremap <space>gc :Gcommit -v -q<CR>
+nnoremap <space>gt :Gcommit -v -q %:p<CR>
+nnoremap <space>gd :Gdiff<CR>
+nnoremap <space>ge :Gedit<CR>
+nnoremap <space>gr :Gread<CR>
+nnoremap <space>gw :Gwrite<CR><CR>
+nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
+nnoremap <space>gp :Ggrep<Space>
+nnoremap <space>gm :Gmove<Space>
+nnoremap <space>gb :Git branch<Space>
+nnoremap <space>go :Git checkout<Space>
+nnoremap <space>gps :Dispatch! git push<CR>
+nnoremap <space>gpl :Dispatch! git pull<CR>
+
+
+:map <C-l> <C-w>l
+:map <C-j> <C-w>j
+:map <C-k> <C-w>k
+:map <C-h> <C-w>h
