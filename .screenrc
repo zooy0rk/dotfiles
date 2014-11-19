@@ -87,5 +87,14 @@ attrcolor b ".I"
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 # erase background with current bg color
 defbce "on"
-caption always "%{= KW}%-w%{= gW}%n %t%{-}%+w %-="
-hardstatus alwayslastline "%{= kW} %-= %{= kC}Session:%u%{= kW} %5` | %{= kC}Host:%{= kW} %H | %1` |%{= kC} MEM:%{= kW} %2`MB /%{= kC} SW: %{= kW}%3`MB | %4` %{= kR}Unread %{= kW}| %m/%d %c"
+#caption always "%{= KW}%-w%{= gW}%n %t%{-}%+w %-="
+#caption always "%{= gK}⮀%{=b KW}%-w%{= gK}⮀%{=b gW}%n %t%{-}%{=b Kg}⮀%+w %-="
+caption always "%{=b KW}%-w%{= gK}⮀%{=b gW}%n %t%{-}%{= Kg}⮀%{=b KW}%+w %-="
+#hardstatus alwayslastline "%{= kW} %-= %{= kC}Session:%u%{= kW} %5` | %{= kC}Host:%{= kW} %H | %1` |%{= kC} MEM:%{= kW} %2`MB /%{= kC} SW: %{= kW}%3`MB | %4` %{= kR}Unread %{= kW}| %m/%d %c"
+hardstatus alwayslastline "%{= kW} %-= %{= kW}  %u%{= kC}Host:%{= kW} %H ⮃ %1` ⮃%{= kC} MEM:%{= kW} %2`MB /%{= kC} SW: %{= kW}%3`MB ⮃ %4` %{= kR}Unread %{= kW}⮃ %m/%d %c"
+
+
+backtick 1 60 60 sh -c 'uptime | sed "s/.*load average: //g"'
+backtick 2 60 60 sh -c 'free -m | grep ".*buffers\/cache" | sed "s/.*[[:space:]]\([0-9]\)/\1/g"'
+backtick 3 60 60 sh -c 'free -m | grep "^Swap" | sed "s/.*[[:space:]]\([0-9]\)/\1/g"'
+backtick 4 60 60 sh -c ''

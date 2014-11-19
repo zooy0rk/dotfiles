@@ -118,8 +118,17 @@ fi
 function EXT_COLOR () { echo -ne "\e[38;5;$1m"; }
 function CLOSE_COLOR () { echo -ne '\e[m'; }
 export PS1="\[`EXT_COLOR 187`\]\u@\h\[`CLOSE_COLOR`\]\[`EXT_COLOR 174`\] \w \$ \[`CLOSE_COLOR`\] > "
+export PS11="\[`EXT_COLOR 187`\]\u@\h\[`CLOSE_COLOR`\]\[`EXT_COLOR 174`\] \w \$ \[`CLOSE_COLOR`\]"
+export PS12="> "
 export LS_COLORS='di=38;5;108:fi=00:*svn-commit.tmp=31:ln=38;5;116:ex=38;5;186'
 
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 
 export EDITOR=vim
+set -o vi
+
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME=Solarized_NoExitState
+GIT_PROMPT_START=${PS11}
+GIT_PROMPT_END=${PS12}
+source ~/.bash-git-prompt/gitprompt.sh
