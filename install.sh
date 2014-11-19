@@ -9,6 +9,8 @@ git submodule update
 
 for dotfile in $(ls -A | grep '^\.' | grep -v '^\.git')
 do
+	[[ -L ~/${dotfie} ]] && continue
+
 	[[ -f ~/${dotfile} || -e ~/${dotfile} ]] && mv ~/${dotfile} ~/${dotfile}.orig
 
 	ln -s $(pwd)/${dotfile} ~/${dotfile}
