@@ -7,6 +7,10 @@ set background=dark
 set smartindent autoindent
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+if has("autocmd")                                                                                                                                                                                                                              
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif                                                                                                                                                 
+endif 
+
 :set incsearch
 :set ignorecase
 :set smartcase
