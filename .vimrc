@@ -5,7 +5,11 @@ autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,
 autocmd BufNewFile,BufRead *.json set ft=javascript smartindent cinwords={ shiftwidth=4 tabstop=4 autoindent
 set background=dark
 set smartindent autoindent
-set expandtab
+set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+if has("autocmd")                                                                                                                                                                                                                              
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif                                                                                                                                                 
+endif 
 
 :set incsearch
 :set ignorecase
@@ -48,7 +52,7 @@ set noshowmode
 :nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 :nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
 :nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-:nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+:nmap \m :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
 
 nmap <F8> :TagbarToggle<CR>
 
