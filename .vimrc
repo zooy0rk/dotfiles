@@ -1,11 +1,15 @@
 execute pathogen#infect()
 
 syntax on
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class shiftwidth=4 tabstop=4 autoindent 
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class shiftwidth=4 tabstop=4 softtabstop=4 autoindent 
 autocmd BufNewFile,BufRead *.json set ft=javascript smartindent cinwords={ shiftwidth=4 tabstop=4 autoindent
 set background=dark
 set smartindent autoindent
 set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+if has("autocmd")                                                                                                                                                                                                                              
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif                                                                                                                                                 
+endif 
 
 :set incsearch
 :set ignorecase
