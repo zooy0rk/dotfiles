@@ -91,7 +91,8 @@ defbce "on"
 #caption always "%{= gK}⮀%{=b KW}%-w%{= gK}⮀%{=b gW}%n %t%{-}%{=b Kg}⮀%+w %-="
 caption always "%{=b KW}%-w%{= gK}⮀%{=b gW}%n %t%{-}%{= Kg}⮀%{=b KW}%+w %-="
 #hardstatus alwayslastline "%{= kW} %-= %{= kC}Session:%u%{= kW} %5` | %{= kC}Host:%{= kW} %H | %1` |%{= kC} MEM:%{= kW} %2`MB /%{= kC} SW: %{= kW}%3`MB | %4` %{= kR}Unread %{= kW}| %m/%d %c"
-hardstatus alwayslastline "%{= kW} %-= %{= kW}  %u%{= kC}Host:%{= kW} %H ⮃ %1` ⮃%{= kC} MEM:%{= kW} %2`MB /%{= kC} SW: %{= kW}%3`MB ⮃ %4` %{= kR}Unread %{= kW}⮃ %m/%d %c"
+#hardstatus alwayslastline "%{= kW} %-= %{= kW}  %u%{= kC}Host:%{= kW} %H ⮃ %1` ⮃%{= kC} MEM:%{= kW} %2`MB /%{= kC} SW: %{= kW}%3`MB ⮃ %4` %{= kR}Unread %{= kW}⮃ %m/%d %c"
+hardstatus alwayslastline "%{= dW} %-= %{= dW}  %u%{= dC}Host:%{= dW} %H ⮃ %1` ⮃%{= dC} MEM:%{= dW} %2`MB /%{= dC} SW: %{= dW}%3`MB ⮃ %4` %{= dR}Unread %{= dW}⮃ %m/%d %c"
 
 
 backtick 1 60 60 sh -c 'uptime | sed "s/.*load average: //g"'

@@ -1,5 +1,6 @@
 #bind x exec urxvt +sb -fn "xft:terminus:size=12" -rv
-bind x exec urxvt +sb -fn "xft:Inconsolata for Powerline:pixelsize=14" -rv
+#bind x exec urxvt +sb -fn "xft:Inconsolata for Powerline:pixelsize=14" -rv
+bind x exec urxvt -bg \#404040 +sb -fg white -fn "xft:Inconsolata for Powerline:pixelsize=14"
 bind g exec google-chrome
 
 exec /usr/bin/rpws init 4 -k
