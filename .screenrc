@@ -1,54 +1,7 @@
-#caption always "%{=b dw}%{=b dw}[ %h ] [ %= %?%{-b dc}%-Lw%?%{+b dk}(%{+b dw}%n:%t%{+b dk})%?(%u)%?%{-b dw}%?%{-b dc}%+Lw%? %{=b dk}%{=b dw}] [ %{-b dw}Load%{+b dk}: %{-b dc}%l %{=b dw}] [ %{-b dw}%{-b dc}%D %M %d %c:%s %Y%{=b dw} ]" 
-#caption always "%{=b dw}%{=b dw}[ %{-b dc}%h%{=b dw} ] [ %= %?%{-b dc}%-Lw%?%{+b dk}(%{+b dw}%n:%t%{+b dk})%?(%u)%?%{-b dw}%?%{-b dc}%+Lw%? %{=b dk}%{=b dw}] [%{-b dw} %1`%{=b dw} ]" 
-#hardstatus alwayslastline "%{+b d%{+b dw}[%{-b dg} %0C:%s%a %{=b dk}]-[ %{-b dw}Load%{+b dk}:%{-b dg}%l %{+b dk}] %h"
-
-#hardstatus alwayslastline
-#hardstatus string '%{Yk}[ %{W}%H %{Y}][%= %{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{w}][%{Y}%l%{w}]%{=w C}[ %m/%d %c ]%{W}'
-
-#caption always "%{= kb}[ %{G}%H::$USER %{b}][ %=%{w}%?%-Lw%?%{b}(%{W}%n*%f %t%?(%u)%?%{b})%{w}%?%+Lw%?%= %{b}][%{kB} %Y.%m.%d %{kW}%0c %{kb}]"
-
-## statusline, customized
-#hardstatus alwayslastline '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR}[%{W}%n%f %t%?(%u)%?%{=b kR}]%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %D %m/%d %C%a ]%{W}'
-
-#hardstatus alwayslastline '%{= M}%H%{= G} %l %= %{= w}%-w%{+b r}%n*%t%{-b r}%{w}%+w %= %{c}%d %D %{B}%c'
-
-#caption always "%{rk}%?%-Lw%?%{-b}(%{+b}%n %t%{-b})%{-b}%?(%u)%?%{rk}%?%+Lw%?%="
-#hardstatus alwayslastline "%{kb}[%{+b}%h%{-b}]%= %{kg}[%{+b}%Y%m%d %c%{-b}]"
-
-#hardstatus alwayslastline 
-#hardstatus string "%-g%{.gk}%n %t%{-}%+k %=%{..g} %H %{..g} %m/%d %c:%s "
-
-# caption
-#caption always "%{= kw}%?%-Lw%?%{+b gw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
-
-# status
-# hardstatus alwayslastline "%{+b kr}[ %H ] %{ky} Load: %l %-=%{kb} %c  %d.%m.%Y"
-
-#caption always "%?%{ Wk}%-Lw%?%{Rk}%n*%f %t%?(%u)%?%?%{Wk}%+Lw%? %=%l %{Rk}%=%c %{Rk}%d/%M/%Y"
-
-
-#hardstatus alwayslastline
-#hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
-#hardstatus string '%{= k.}%-Ly%{= kW}%50> %n%f* %t%{= kW}%+Lw%< %{= kW}%-=%c%{-}'
-
-
-#hardstatus alwayslastline "%{+b kr}[ %H ] %{ky} Load: %l %-=%{kb} %c  %d.%m.%Y"
-#hardstatus alwayslastline "%{+b kr}[ %H ] %{kw} Load: %l %-=%  %{kb} %c:%s  %d.%m.%Y "
-
-#startup_message off
-#hardstatus alwayslastline 
-#hardstatus string  '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m/%d %{W}%c %{g}]'
-#hardstatus string '%{= yd} 0 %{= dy}▶'
-
-
-
-
 startup_message off
 bindkey ^[p prev
 bindkey ^[n next
 bindkey ^T screen
-#bindkey ^[[5 prev
-#bindkey ^[[6 next
 bindkey ^[[5^ prev
 bindkey ^[[6^ next
 
@@ -60,10 +13,6 @@ defscrollback 10000
 defutf8 on
 nonblock on
 
-#caption always "%{= bb}%{+b w} %h %=%t %l"
-#hardstatus alwayslastline
-#hardstatus string '%{= kW}%-w%{= kg}%50>[ %{= kW}%n %t%{= kg} ]%{= kW} %+w%< %{= kG}%-=%D %d %M %Y %c:%s%{-}'
-
 term screen-256color
 
 defutf8 on
@@ -71,31 +20,17 @@ utf8 on on
 startup_message off
 term "screen-256color"
 
-#caption always "%{kY} %n%f* %t %?%{YR}⮀%{kR} %u %{Rb}%:%{Yb}%?%?%F%{.b}⮀%:%{.w}⮀%?%="
-#hardstatus alwayslastline "%{bk} %S %{kb}⮀ $LOGNAME %{bk}⮀ %H %?%{kb}⮀%{kY} %-Lw%{Yk}⮀%:%{Yb}⮀%{Yk}%?%{Yk} %n%f* %t %{kY}⮀%+Lw %-="
-
-#caption always "%{= bb} %n%f* %t %?%{YR}⮀%{kR} %u %{Rb}%:%{Yb}%?%?%F%{.b}⮀%:%{.w}⮀%?%="
-#hardstatus alwayslastline "%{bw} %S %{kb}⮀ $LOGNAME %{bk}⮀ %H %?%{kb}⮀%{kY} %-Lw%{Yk}⮀%:%{Yb}⮀%{Yk}%?%{Yk} %n%f* %t %{kY}⮀%+Lw %-="
-#hardstatus alwayslastline "%{= kl}%?%{wb}%{kw} %-Lw%{bk}⮀%:%{bb}⮀%{bw}%?%{+bbw} %n %t %{kb}⮀%{kw}%+Lw %-="
-#caption always "%{= bb}%{+b w} %h %=%t %l"
-#hardstatus alwayslastline "%{= kl}%?%{wb}%{kw} %-Lw%{bk}⮀%:%{bb}⮀%{bw}%?%{bw} %n %t %{kb}⮀%{kw}%+Lw %-="
-
-
-# allow bold colors - necessary for some reason
 attrcolor b ".I"
-# tell screen how to set colors. AB = background, AF=foreground
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-# erase background with current bg color
 defbce "on"
-#caption always "%{= KW}%-w%{= gW}%n %t%{-}%+w %-="
-#caption always "%{= gK}⮀%{=b KW}%-w%{= gK}⮀%{=b gW}%n %t%{-}%{=b Kg}⮀%+w %-="
-caption always "%{=b KW}%-w%{= gK}⮀%{=b gW}%n %t%{-}%{= Kg}⮀%{=b KW}%+w %-="
-#hardstatus alwayslastline "%{= kW} %-= %{= kC}Session:%u%{= kW} %5` | %{= kC}Host:%{= kW} %H | %1` |%{= kC} MEM:%{= kW} %2`MB /%{= kC} SW: %{= kW}%3`MB | %4` %{= kR}Unread %{= kW}| %m/%d %c"
-#hardstatus alwayslastline "%{= kW} %-= %{= kW}  %u%{= kC}Host:%{= kW} %H ⮃ %1` ⮃%{= kC} MEM:%{= kW} %2`MB /%{= kC} SW: %{= kW}%3`MB ⮃ %4` %{= kR}Unread %{= kW}⮃ %m/%d %c"
-hardstatus alwayslastline "%{= dW} %-= %{= dW}  %u%{= dC}Host:%{= dW} %H ⮃ %1` ⮃%{= dC} MEM:%{= dW} %2`MB /%{= dC} SW: %{= dW}%3`MB ⮃ %4` %{= dR}Unread %{= dW}⮃ %m/%d %c"
+
+# Working double-line
+caption always "%{=b KW}%-w%{= cK}⮀%{=b cW}%n %t%{-}%{= Kc}⮀%{=b KW}%+w %-="
+hardstatus alwayslastline "%= %{= dW}%u%{= dC}%H:%{= dW} %1` ⮃%{= dC} mem:%{= dW} %7` ⮃ %{= dC}temp: %{= dW}%5`%{= dW} ⮃ %{= dC}fan: %{= dW}%6`rpm%{= dW} ⮃ %{= dC}vol: %{= dW}%8`%{= dW} ⮃ %{= dC}%m/%d %{= dW}%c %="
 
 
-backtick 1 60 60 sh -c 'uptime | sed "s/.*load average: //g"'
-backtick 2 60 60 sh -c 'free -m | grep ".*buffers\/cache" | sed "s/.*[[:space:]]\([0-9]\)/\1/g"'
-backtick 3 60 60 sh -c 'free -m | grep "^Swap" | sed "s/.*[[:space:]]\([0-9]\)/\1/g"'
-backtick 4 60 60 sh -c ''
+backtick 1 10 10 sh -c 'uptime | sed "s/.*load average: //g"'
+backtick 5 10 10 sh -c "sensors | grep temp1 | awk '{print \$2}' |sed 's/\+//g'"
+backtick 6 10 10 sh -c "sensors | grep 'CPU FAN' | head -1 | awk -F: '{print \$2}' | awk '{print \$1}'"
+backtick 7 10 10 sh -c "echo \"$(free | grep buffers\/cache | awk '{print \$3}')/$(free | grep \^Mem | awk '{print \$2}' ) * 100\" | bc -l | xargs printf \"%.*f%%\n\" 0"
+backtick 8 10 10 sh -c "amixer -c1 | grep -A4 Master | grep 'Mono: Playback' | awk '{print \$4}' | tr -d []"
