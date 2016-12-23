@@ -36,13 +36,15 @@ backtick 7 10 10 sh -c "echo \"$(free | grep buffers\/cache | awk '{print \$3}')
 backtick 8 10 10 sh -c "amixer -c1 | grep -A4 Master | grep 'Mono: Playback' | awk '{print \$4}' | tr -d []"
 backtick 9 10 10 sh -c "curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=${METRIC}\&locCode\=30004 | perl -ne 'if (/Currently/) {chomp;/\<title\>Currently: (.*)?\<\/title\>/; print \$1; }'"
 
-bindkey ^R eval "command -c rsz" # enter resize mode
+#bindkey ^R eval "command -c rsz" # enter resize mode
+#bindkey r eval "command -c rsz" # enter resize mode
 bind -c rsz h eval "resize -h -1" "command -c rsz"
 bind -c rsz j eval "resize -v -1" "command -c rsz"
 bind -c rsz k eval "resize -v +1" "command -c rsz"
 bind -c rsz l eval "resize -h +1" "command -c rsz"
 
-bindkey ^F eval "command -c fcs"
+#bindkey ^F eval "command -c fcs"
+#bindkey f eval "command -c fcs"
 bind -c fcs h eval "focus left" "command -c fcs"
 bind -c fcs j eval "focus down" "command -c fcs"
 bind -c fcs k eval "focus up" "command -c fcs"

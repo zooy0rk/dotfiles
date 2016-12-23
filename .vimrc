@@ -1,14 +1,16 @@
 execute pathogen#infect()
 
 syntax on
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class shiftwidth=4 tabstop=4 softtabstop=4 autoindent 
-autocmd BufNewFile,BufRead *.json set ft=javascript smartindent cinwords={ shiftwidth=4 tabstop=4 autoindent
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class shiftwidth=2 tabstop=2 softtabstop=2 autoindent 
+autocmd BufNewFile,BufRead *.json set ft=javascript smartindent cinwords={ shiftwidth=2 tabstop=2 autoindent
 set background=dark
 set smartindent autoindent
-set expandtab tabstop=4 shiftwidth=4 softtabstop=4
+set expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+let b:delimitMate_expand_cr=1
 
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif 
 
 :set incsearch
@@ -25,7 +27,7 @@ endif
 :nmap j gj
 :nmap k gk
 
-:nmap <C-e> :e#<CR>
+"":nmap <C-e> :e#<CR>
 
 :nmap <C-n> :bnext<CR>
 :nmap <C-p> :bprev<CR>
@@ -49,15 +51,16 @@ set laststatus=2
 set showtabline=2
 set noshowmode
 
-:nmap \t :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
-:nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
-:nmap \M :set noexpandtab tabstop=8 softtabstop=4 shiftwidth=4<CR>
-:nmap \m :set expandtab tabstop=4 shiftwidth=4 softtabstop=4<CR>
+:nmap \T :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
+"":nmap \T :set expandtab tabstop=8 shiftwidth=8 softtabstop=4<CR>
+:nmap \M :set noexpandtab tabstop=2 softtabstop=2 shiftwidth=2<CR>
+:nmap \m :set expandtab tabstop=2 shiftwidth=2 softtabstop=2<CR>
 
 nmap <F8> :TagbarToggle<CR>
 
 colors zenburn
 
+nnoremap <space>r :!cd ~/dcms ; ./gradlew desktop:run<CR>
 
 nnoremap <space>ga :Git add %:p<CR><CR>
 nnoremap <space>gs :Gstatus<CR>
@@ -80,3 +83,18 @@ nnoremap <space>gpl :Dispatch! git pull<CR>
 :map <C-j> <C-w>j
 :map <C-k> <C-w>k
 :map <C-h> <C-w>h
+
+:filetype indent plugin on
+let g:EclimCompletionMethod = 'omnifunc'
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_auto_trigger = 1
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+
+:hi MatchParen cterm=bold ctermbg=none ctermfg=green
+
+:set colorcolumn=100
+:set nu

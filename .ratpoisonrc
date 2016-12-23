@@ -1,6 +1,31 @@
 #bind x exec urxvt +sb -fn "xft:terminus:size=12" -rv
 #bind x exec urxvt +sb -fn "xft:Inconsolata for Powerline:pixelsize=14" -rv
-bind x exec urxvt -bg \#454545 +sb -fg white -fn "xft:Inconsolata for Powerline:pixelsize=16"
+
+#unmanage panel
+unmanage feh
+
+
+msgwait 3
+set winname title
+set winfmt %n %s %t
+set fgcolor Grey90
+set bgcolor #404040
+set font -*-terminus-medium-r-normal-*-14-*-*-*-*-*-*-*
+set winliststyle column
+set inputwidth 400
+set waitcursor 1
+set padding 0 14 0 0
+set barpadding 10 5
+set wingravity n
+set transgravity center
+set bargravity center
+set border 0
+set barborder 1
+set inputwidth 800
+
+
+#bind x exec urxvt -bg \#404040 +sb -fg white -fn "xft:Inconsolata for Powerline:pixelsize=14"
+bind x exec urxvt +sb -fg white -fn "xft:Inconsolata for Powerline:pixelsize=14"
 bind g exec google-chrome
 
 exec /usr/bin/rpws init 4 -k
@@ -9,3 +34,8 @@ exec xsetroot -cursor_name left_ptr
 startup_message off
 
 #escape C-z
+
+exec conky
+exec /home.local/zoodev/synergy.sh
+exec xcompmgr -c -f -D 5 &
+exec feh --bg-scale ~/zelda.jpg
