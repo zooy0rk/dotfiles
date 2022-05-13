@@ -1,0 +1,20 @@
+[Unit]
+Description=Mionix
+#BindsTo=dev-tidbit.device
+#After=dev-tidbit.device
+#Requires=dev-tidbit.device
+
+[Service]
+ExecStart=/home/zooy0rk/bin/mouse.sh
+Type=oneshot
+#ExecStart=strace -s 2048 -f -o /tmp/strace.log /usr/local/bin/zav --cavaexec /home/zooy0rk/src/cava/./cava
+#ExecStart=/home/zooy0rk/src/cava/./cava -p /tmp/config
+#ExecStart=/usr/local/bin/zav
+#User=zooy0rk
+#Group=zooy0rk
+#Environment=XDG_RUNTIME_DIR=/run/user/1000
+#Restart=on-failure
+
+[Install]
+#WantedBy=mutli-user.target
+WantedBy=dev-mionix.device

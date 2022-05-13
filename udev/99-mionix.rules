@@ -1,0 +1,2 @@
+ACTION=="bind", SUBSYSTEM=="usb", ATTR{idVendor}=="22d4", ATTR{idProduct}=="1100", SYMLINK+="mionix", TAG+="systemd"
+ACTION=="remove", SUBSYSTEM=="usb", ENV{PRODUCT}=="22d4/1100/100", TAG+="systemd"
